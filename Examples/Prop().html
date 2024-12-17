@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+</head>
+<body>
+    <h3>What is your favorite?</h3>
+    <input type="checkbox" id="favorite" name="favorite" value="1" checked/>Football </br>
+    <input type="button" id="view1" value="Name"/>
+    <input type="button" id="view2" value="Checked or Not"/>
+
+    <script>
+        $(document).ready(function(){
+            $('#view1').click(function(){
+                alert($('#favorite').prop('name'));
+            });
+            $('#view2').click(function(){
+                alert($('#favorite').prop('checked'));
+            });
+        });
+    </script>
+</body>
+</html>

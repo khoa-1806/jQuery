@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h3>What is your favorite?</h3>
+    <br/>
+    <input type="checkbox" id="favorite" name="favorite" value="1" />Football <br/>
+    <input type="button" id="view1" value="Name and Type"/>
+    <input type="button" id="view2" value="Type to textbox"/>
+    <input type="button" id="view3" value="Type to checkbox"/>
+
+
+    <script>
+        $(document).ready(function(){
+            $('#view1').click(function(){
+                var name = $('#favorite').attr('name');
+                var type = $('#favorite').attr('type');
+                
+                alert("Name: " + name + ", Type: "+ type);
+            });
+            $('#view2').click(function(){
+                $('#favorite').attr('type', 'textbox');
+            });
+            $('view3').click(function(){
+                $('#favotite').attr('type', 'checkbox');
+            });
+            
+        });
+    </script>
+</body>
+</html>

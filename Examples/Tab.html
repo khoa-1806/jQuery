@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .tab-wrapper{
+            width: 500px;
+            margin: 20px auto auto 10px;
+            border: 1px solid #acacac;
+        }
+        .tab-wrapper ul{
+            overflow: hidden;
+            background: #aee655;
+            margin: 0px;
+            padding: 0px;
+        }
+        .tab-wrapper ul li{
+            float: left;
+            list-style: none;
+            padding: 10px 20px;
+            background: #348ec9;
+            border-radius: 10px 10px 0px 0px;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+        .tab-wrapper ul li.active{
+            background: #ffff;
+        }
+        .tab-wrapper ul li.active a{
+            color: blue;
+        }
+        .tab-wrapper ul li a{
+            color: #ffff;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        .tab-content{
+            padding: 20px;
+        }
+        .tab-item{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class = "tab-wrapper">
+        <ul class="tab">
+            <li>
+                <a href="#tab-main-info">Main information</a>
+            </li>
+            <li>
+                <a href="#tab-image">Images show here</a>
+            </li>
+            <li>
+                <a href="#tab-seo">SEO</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-item" id="tab-main-info">Main information tab</div>
+            <div class="tab-item" id="tab-image">Images tab</div>
+            <div class="tab-item" id="tab-seo">SEO tab</div>
+        </div>
+    </div>  
+    
+    <script>
+        $(document).ready(function(){
+            function activeTab(obj){
+                $('.tab-wrapper ul li').removeClass('active');
+                $(obj).addClass('active');
+                var id = $(obj).find('a').attr('href');
+                $('.tab-item').hide();
+                $(id) .show();
+            };
+
+            $('.tab li').click(function(){
+                activeTab(this);
+                return false;
+            });
+            activeTab($('.tab li:first-child'));
+        })
+    </script>
+</body>
+</html>
